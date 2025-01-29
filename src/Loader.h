@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <vector>
 #include <future>
+#include "Logger/Logger.h"
 
 class Loader {
 private:

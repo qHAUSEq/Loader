@@ -1,0 +1,4 @@
+[submodule "src/Logger"]
+	path = src/Logger
+	url = https://github.com/qHAUSEq/Logger
+	branch = submodule-version

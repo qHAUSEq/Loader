@@ -1,6 +1,7 @@
 #include "../Loader.h"
 
 int main() {
+    Logger::getInstance().setLogFile("log.txt");
     sf::RenderWindow window;
     window.create(sf::VideoMode::getDesktopMode(), "Test Animation", sf::Style::Titlebar | sf::Style::Close);
 

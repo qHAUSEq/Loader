@@ -19,10 +19,12 @@ file(GLOB ALL_REQUIRED_DLL_CMAKE_SFML "external/SFML/bin/*.dll")
 file(COPY ${ALL_REQUIRED_DLL_CMAKE_SFML} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 file(GLOB PROJECT_FILES "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp" "${CMAKE_CURRENT_LIST_DIR}/src/*.h" "${CMAKE_CURRENT_LIST_DIR}/src/test/*.cpp")
+add_subdirectory(src/Logger)
 add_executable(${PROJECT_NAME} ${PROJECT_FILES})
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 target_link_libraries(${PROJECT_NAME} sfml-audio sfml-graphics sfml-window sfml-system sfml-network)
+target_link_libraries(${PROJECT_NAME} Logger)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/res/background.png
   DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Texture/)
